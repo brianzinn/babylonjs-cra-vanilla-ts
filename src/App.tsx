@@ -1,13 +1,28 @@
-import React from 'react';
-import SceneComponent from 'babylonjs-hook';
+import React, { useState } from 'react';
+import SceneComponent, { useScene } from 'babylonjs-hook';
 import './App.css';
 import { Scene, FreeCamera, Vector3, HemisphericLight, MeshBuilder, Mesh } from '@babylonjs/core';
 
 let box: Mesh | undefined;
 
-const onSceneReady = (scene: Scene) => {
-  console.log('scene ready:', scene);
+const MySphere: React.FC<{ position: Vector3 }> = ({ position }) => {
+  const scene = useScene();
+  const createSphere = (): Mesh => {
+    const sphere = MeshBuilder.CreateSphere(
+      'sphere', {
+      diameter: 1
+    },
+      scene);
+    return sphere;
+  };
+  const [sphere] = useState(createSphere);
 
+  sphere.position = position;
+
+  return null;
+}
+
+const onSceneReady = (scene: Scene) => {
   // This creates and positions a free camera (non-mesh)
   var camera = new FreeCamera("camera1", new Vector3(0, 5, -10), scene);
 
@@ -26,13 +41,13 @@ const onSceneReady = (scene: Scene) => {
   light.intensity = 0.7;
 
   // Our built-in 'box' shape.
-  box = MeshBuilder.CreateBox("box", {size: 2}, scene);
+  box = MeshBuilder.CreateBox("box", { size: 2 }, scene);
 
   // Move the box upward 1/2 its height
   box.position.y = 1;
 
   // Our built-in 'ground' shape.
-  MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
+  MeshBuilder.CreateGround("ground", { width: 6, height: 6 }, scene);
 }
 
 const onRender = (scene: Scene) => {
@@ -45,7 +60,9 @@ const onRender = (scene: Scene) => {
 }
 
 export default () => (
-    <div>
-      <SceneComponent antialias onSceneReady={onSceneReady} onRender={onRender} id='my-canvas' />
-    </div>
+  <div>
+    <SceneComponent antialias onSceneReady={onSceneReady} onRender={onRender} id='my-canvas' renderChildrenWhenReady>
+      <MySphere position={new Vector3(0, 2.5, 0)} />
+    </SceneComponent>
+  </div>
 )

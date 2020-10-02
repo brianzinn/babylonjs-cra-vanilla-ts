@@ -2314,10 +2314,10 @@ babylon@^6.18.0:
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
   integrity sha512-q/UEjfGJ2Cm3oKV71DJz9d25TPnq5rhBVL2Q4fA5wcC3jcrdn7+SssEybFIxwAvvP+YCsCYNKughoF33GxgycQ==
 
-babylonjs-hook@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/babylonjs-hook/-/babylonjs-hook-0.0.1.tgz#a5a07bf927db0d7661795fef995e464975904a3b"
-  integrity sha512-mtfMyq1NMFvDHUODFSph0pVYzwbTLl2+85g5yW9hIDAWYndD00+6JxfrmgJ3tCQmkrcmqhMW/shlgRvv2aLIHA==
+babylonjs-hook@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/babylonjs-hook/-/babylonjs-hook-0.0.5.tgz#e2a49de51ba51d394974241ae474256b29c64284"
+  integrity sha512-Cgn8RWlLsWEz91jjVph64p7SsP55vdddhe5DqHSc+ASudw+C/gUfwrIFHzCQoE33OMXhNZe2HFA84jkT5XRKYw==
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -2700,9 +2700,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001020, caniuse-lite@^1.0.30001035:
-  version "1.0.30001035"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001035.tgz#2bb53b8aa4716b2ed08e088d4dc816a5fe089a1e"
-  integrity sha512-C1ZxgkuA4/bUEdMbU5WrGY4+UhMFFiXrgNAfxiMIqWgFTWfv/xsZCS2xEHT2LMq7xAZfuAnu6mcqyDl0ZR6wLQ==
+  version "1.0.30001142"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001142.tgz"
+  integrity sha512-pDPpn9ankEpBFZXyCv2I4lh1v/ju+bqb78QfKf+w9XgDAFWBwSYPswXqprRdrgQWK0wQnpIbfwRjNHO1HWqvoQ==
 
 capture-exit@^2.0.0:
   version "2.0.0"
