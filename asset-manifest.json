@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/babylonjs-cra-vanilla-ts/static/css/main.704cc935.chunk.css",
+    "main.js": "/babylonjs-cra-vanilla-ts/static/js/main.7c0b73d0.chunk.js",
+    "runtime-main.js": "/babylonjs-cra-vanilla-ts/static/js/runtime-main.61b56238.js",
+    "static/js/2.0608b9df.chunk.js": "/babylonjs-cra-vanilla-ts/static/js/2.0608b9df.chunk.js",
+    "index.html": "/babylonjs-cra-vanilla-ts/index.html",
+    "precache-manifest.2c4b38499e41a04f1621c933f9011904.js": "/babylonjs-cra-vanilla-ts/precache-manifest.2c4b38499e41a04f1621c933f9011904.js",
+    "service-worker.js": "/babylonjs-cra-vanilla-ts/service-worker.js",
+    "static/js/2.0608b9df.chunk.js.LICENSE.txt": "/babylonjs-cra-vanilla-ts/static/js/2.0608b9df.chunk.js.LICENSE.txt",
+    "static/js/main.7c0b73d0.chunk.js.LICENSE.txt": "/babylonjs-cra-vanilla-ts/static/js/main.7c0b73d0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.61b56238.js",
+    "static/js/2.0608b9df.chunk.js",
+    "static/css/main.704cc935.chunk.css",
+    "static/js/main.7c0b73d0.chunk.js"
+  ]
+}
