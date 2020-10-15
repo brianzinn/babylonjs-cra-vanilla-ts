@@ -1,33 +1,17 @@
-import React, { useState } from 'react';
-import SceneComponent, { useScene } from 'babylonjs-hook';
+import React, { Suspense } from 'react';
+import { Scene, ArcRotateCamera, Vector3, HemisphericLight, MeshBuilder, Mesh, Color3 } from '@babylonjs/core';
+
+import SceneComponent from 'babylonjs-hook';
+import { AssetManagerContextProvider, SceneLoaderContextProvider } from 'react-babylonjs-loaders';
+
 import './App.css';
-import { Scene, FreeCamera, Vector3, HemisphericLight, MeshBuilder, Mesh } from '@babylonjs/core';
+import AssetManagerModels, { AssetManagerFallback } from'./AssetManagerModels';
+import SceneLoaderModels, { SceneLoaderFallback} from './SceneLoaderModels';
 
 let box: Mesh | undefined;
 
-const MySphere: React.FC<{ position: Vector3 }> = ({ position }) => {
-  const scene = useScene();
-  const createSphere = (): Mesh => {
-    const sphere = MeshBuilder.CreateSphere(
-      'sphere', {
-      diameter: 1
-    },
-      scene);
-    return sphere;
-  };
-  const [sphere] = useState(createSphere);
-
-  sphere.position = position;
-
-  return null;
-}
-
 const onSceneReady = (scene: Scene) => {
-  // This creates and positions a free camera (non-mesh)
-  var camera = new FreeCamera("camera1", new Vector3(0, 5, -10), scene);
-
-  // This targets the camera to scene origin
-  camera.setTarget(Vector3.Zero());
+  var camera = new ArcRotateCamera('camera1', Math.PI / 2, Math.PI * 0.45, 8, Vector3.Zero(), scene);
 
   const canvas: HTMLCanvasElement = scene.getEngine()!.getRenderingCanvas()!;
 
@@ -41,13 +25,14 @@ const onSceneReady = (scene: Scene) => {
   light.intensity = 0.7;
 
   // Our built-in 'box' shape.
-  box = MeshBuilder.CreateBox("box", { size: 2 }, scene);
+  box = MeshBuilder.CreateBox("box", { size: 0.5 /* was 2 */ }, scene);
 
   // Move the box upward 1/2 its height
-  box.position.y = 1;
+  box.position.y = -0.5;
 
   // Our built-in 'ground' shape.
-  MeshBuilder.CreateGround("ground", { width: 6, height: 6 }, scene);
+  const ground = MeshBuilder.CreateGround("ground", { width: 6, height: 6 }, scene);
+  ground.position.y = -0.75;
 }
 
 const onRender = (scene: Scene) => {
@@ -59,10 +44,23 @@ const onRender = (scene: Scene) => {
   }
 }
 
+const sceneLoaderPosition = new Vector3(0, 1.5, 0);
+const boomboxPosition = new Vector3(2.5, 0.5, 0);
+const avocadoPosition = new Vector3(-2.5, 0, 0);
+
 export default () => (
   <div>
     <SceneComponent antialias onSceneReady={onSceneReady} onRender={onRender} id='my-canvas' renderChildrenWhenReady>
-      <MySphere position={new Vector3(0, 2.5, 0)} />
+      <AssetManagerContextProvider>
+        <Suspense fallback= {<AssetManagerFallback barColor='#666666' textColor='white' totalControls={2} />}>
+            <AssetManagerModels boomboxPosition={boomboxPosition} avocadoPosition={avocadoPosition} />
+        </Suspense>
+      </AssetManagerContextProvider>
+      <SceneLoaderContextProvider>
+        <Suspense fallback= {<SceneLoaderFallback position={sceneLoaderPosition} width={2} height={0.5} depth={0.2} barColor={Color3.Red()} />}>
+            <SceneLoaderModels position={sceneLoaderPosition} />
+        </Suspense>
+      </SceneLoaderContextProvider>
     </SceneComponent>
   </div>
 )

@@ -1020,11 +1020,28 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@babylonjs/core@^4.1.0":
+"@babylonjs/core@4.1.0", "@babylonjs/core@^4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@babylonjs/core/-/core-4.1.0.tgz#63e390862debf81f8cf248496187029c42ea5eda"
   integrity sha512-4pEKPEu14qRdqH5qatfmns/iHFHmujDI22SXkHIlJhTT0WgJH4I8IN1fPw9sU6jSCH2ul76Lpbi2zREvfrEDQA==
   dependencies:
+    tslib "^1.10.0"
+
+"@babylonjs/gui@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/gui/-/gui-4.1.0.tgz#b889251a6279fa3c05e97d3b225b7d4f2de180c5"
+  integrity sha512-H4+zkIMGQlqJ8r3KNlI1fY31v3AssauY7/IMXzl4GloXqmELE+A46h85q/fzY+0SPzXlD4lE0i3BqXkTIUKw+g==
+  dependencies:
+    "@babylonjs/core" "4.1.0"
+    tslib "^1.10.0"
+
+"@babylonjs/loaders@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/loaders/-/loaders-4.1.0.tgz#1b40f8c07b46228ae4cf6dbda2d0856293f4db80"
+  integrity sha512-stK/QygoNhdrJ9q8yNyZ7iE8Eu+dpwBviSoEigLX5IwHFJUmyxeI0LIZpjRAP2GRB96kqLrBsIBdWEwk076w/g==
+  dependencies:
+    "@babylonjs/core" "4.1.0"
+    babylonjs-gltf2interface "4.1.0"
     tslib "^1.10.0"
 
 "@cnakazawa/watch@^1.0.3":
@@ -2313,6 +2330,11 @@ babylon@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
   integrity sha512-q/UEjfGJ2Cm3oKV71DJz9d25TPnq5rhBVL2Q4fA5wcC3jcrdn7+SssEybFIxwAvvP+YCsCYNKughoF33GxgycQ==
+
+babylonjs-gltf2interface@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/babylonjs-gltf2interface/-/babylonjs-gltf2interface-4.1.0.tgz#95ec994e352ac5cb74869e238218a1b4df18e2f4"
+  integrity sha512-H2obg+4t8bcmLyzGiOQqmUaTQqTu+6mJUlsMWZvmRBf0k2fQVeTdAkH7aDy6HVIz/THvpIx4ntG1Lsyquvmc5Q==
 
 babylonjs-hook@^0.0.5:
   version "0.0.5"
@@ -8504,6 +8526,11 @@ react-app-polyfill@^1.0.6:
     raf "^3.4.1"
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
+
+react-babylonjs-loaders@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/react-babylonjs-loaders/-/react-babylonjs-loaders-0.0.3.tgz#29871c8332b980b47aa14d940415cf18d44cd2da"
+  integrity sha512-YmYo0lW7RuDi2Jt/OyFxKnd9CotpO6zQyH5XVwBIyDfpoxSk5slLqUqCIZuf5wSNmxdo+NGgpbJsA7bCLp3bzA==
 
 react-dev-utils@^10.2.1:
   version "10.2.1"
