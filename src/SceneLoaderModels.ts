@@ -85,7 +85,7 @@ type SceneLoaderModelProps = {
 
 const SceneLoaderModels: React.FC<SceneLoaderModelProps> = ({position}) => {
     const rootUrl = 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/WaterBottle/glTF/';
-    const loadedWaterBottle = useSceneLoader(rootUrl, 'WaterBottle.gltf', undefined, {
+    /*const loadedWaterBottle = */ useSceneLoader(rootUrl, 'WaterBottle.gltf', undefined, {
         reportProgress: true,
         scaleToDimension: 2,
         onModelLoaded: (loadedModel) => {
@@ -97,7 +97,6 @@ const SceneLoaderModels: React.FC<SceneLoaderModelProps> = ({position}) => {
             }
         }
     });
-    console.log('water bottle:', loadedWaterBottle);
 
     return null;
 }

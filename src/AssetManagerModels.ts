@@ -1,8 +1,8 @@
-import React, { useMemo, useRef, useContext, useEffect } from 'react';
+import React, { useRef, useContext, useEffect } from 'react';
 
 import { useScene } from 'babylonjs-hook';
 import { Task, TaskType, AssetManagerContext, useAssetManager } from 'react-babylonjs-loaders';
-import { MeshBuilder, Nullable, Mesh, MeshAssetTask, Vector3, Texture } from '@babylonjs/core';
+import { MeshBuilder, Nullable, MeshAssetTask, Vector3 } from '@babylonjs/core';
 import { AdvancedDynamicTexture, Container, Control, Rectangle, TextBlock } from '@babylonjs/gui';
 
 type AssetManagerFallbackType = {
